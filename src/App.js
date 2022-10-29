@@ -1,8 +1,8 @@
 
 
-import Expense  from "./components/Expences";
-
-
+import Expense  from "./components/Expense/Expences";
+import NewExpence from "./components/NewExpence/NewExpence";
+import './index.css';
 function App() {
   const expenses = [
     {
@@ -25,11 +25,12 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+  const extractData= data =>{
+    console.log(data);
+  }
   return (
    <div>
-    <h1>
-      This is first app
-    </h1>
+   <NewExpence onData={extractData}/>
     <Expense items={expenses}/>
    
    </div>
